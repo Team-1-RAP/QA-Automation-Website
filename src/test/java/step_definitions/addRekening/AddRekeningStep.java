@@ -19,6 +19,23 @@ public class AddRekeningStep {
         this.driver= Hooks.driver;
     }
 
+    @And("The user verify redirected to Tab Formula Data Diri")
+    public void redirectedToTabFormulaDataDiri(){
+        AddRekeningPage addRekeningPage = new AddRekeningPage(driver);
+        Assert.assertTrue(addRekeningPage.redirectedToTabFormulaDataDiri());
+    }
+
+    @And("The user click Selanjutnya button")
+    public void clickSelanjutnyaButton(){
+        AddRekeningPage addRekeningPage = new AddRekeningPage(driver);
+        addRekeningPage.clickSelanjutnyaButton();
+    }
+
+    @And("The user select {string} in Jenis Rekening")
+    public void selectJenisRekening(String jenisRekening){
+        AddRekeningPage addRekeningPage = new AddRekeningPage(driver);
+        addRekeningPage.selectJenisRekening(jenisRekening);
+    }
 
     @Then("The user will redirect to Tambah Rekening page")
     public void redirectToTambahRekeningPage(){
