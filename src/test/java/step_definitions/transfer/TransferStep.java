@@ -18,6 +18,30 @@ public class TransferStep {
         this.driver= Hooks.driver;
     }
 
+    @And("The user verify Transfer is success")
+    public void TransferIsSuccess(){
+        TransferPage transferPage = new TransferPage(driver);
+        Assert.assertEquals(transferPage.getValueTransferSuccess("transaksiBerhasilLabelInTransferSuccess"),"Transaksi Berhasil","Transaksi berhasil label");
+        Assert.assertEquals(transferPage.getValueTransferSuccess("nominalInTransferSuccess"),TransferPage.getNominalIDR(),"Nominal true");
+    }
+
+    @And("On Transfer page, The user input {string} as Pin")
+    public void inputPin(String pin){
+        TransferPage transferPage = new TransferPage(driver);
+        transferPage.inputPin(pin);
+    }
+
+    @And("On Transfer page, The user verify data in Konfirmasi Transfer is correct")
+    public void KonfirmasiTransferIsCorrect(){
+        TransferPage transferPage = new TransferPage(driver);
+        Assert.assertEquals(transferPage.getValueKonfirmasiTransfer("nominalInKonfirmasiTransfer"),TransferPage.getNominalIDR());
+        Assert.assertEquals(transferPage.getValueKonfirmasiTransfer("biayaAdminInKonfirmasiTransfer"),"0");
+        Assert.assertEquals(transferPage.getValueKonfirmasiTransfer("totalInKonfirmasiTransfer"),
+                TransferPage.getNominalIDR());
+        Assert.assertEquals(transferPage.getValueKonfirmasiTransfer("keteranganInKonfirmasiTransfer"),
+                TransferPage.getKeterangan());
+    }
+
     @And("On Transfer page, The user input {string} as Keterangan")
     public void inputKeterangan(String Keterangan){
         TransferPage transferPage = new TransferPage(driver);
