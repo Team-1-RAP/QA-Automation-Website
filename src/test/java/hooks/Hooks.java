@@ -29,7 +29,7 @@ public class Hooks {
         options.setExperimentalOption("useAutomationExtension", false);
         options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
         driver=new ChromeDriver(options);
-        driver.get("https://storied-paletas-e17bc9.netlify.app/");
+        driver.get("https://fsw-frontend-staging.up.railway.app/");
         driver.manage().window().maximize();
     }
     @After(order = 0)

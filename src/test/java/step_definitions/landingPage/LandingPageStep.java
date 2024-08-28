@@ -36,7 +36,7 @@ public class LandingPageStep {
     @When("The user already on Simple Bank Website")
     public void alreadyOpenSimpleBank() throws InterruptedException {
         LandingPagePage landingPagePage = new LandingPagePage(driver);
-        Assert.assertEquals(landingPagePage.alreadyOpenSimpleBank(),"https://storied-paletas-e17bc9.netlify.app/");
+        Assert.assertEquals(landingPagePage.alreadyOpenSimpleBank(),"https://fsw-frontend-staging.up.railway.app/");
     }
 
     @Given("The user open Simple Bank Website")
