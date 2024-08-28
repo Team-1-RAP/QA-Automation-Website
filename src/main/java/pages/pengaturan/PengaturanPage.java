@@ -22,11 +22,35 @@ public class PengaturanPage {
     @FindBy(xpath = "//button[.='Ubah Pin']")
     private WebElement ubahPinButton;
 
+    @FindBy(id = "password")
+    private WebElement passwordField;
+
+    @FindBy(id = "cardNumber")
+    private WebElement cardNumberField;
+
     public PengaturanPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver,this);
         PageFactory.initElements(new AjaxElementLocatorFactory(driver, 30), this);
         this.driver=driver;
+    }
+
+    public void clickUbahPin(){
+        ubahPinButton.click();
+    }
+
+    public void clickUbahPassword(){
+        ubahPasswordButton.click();
+    }
+
+    public boolean redirectToUbahPinPage(){
+        cardNumberField.isDisplayed();
+        return true;
+    }
+
+    public boolean redirectToUbahPasswordPage(){
+        passwordField.isDisplayed();
+        return true;
     }
 
     public boolean redirectToPengaturanPage(){

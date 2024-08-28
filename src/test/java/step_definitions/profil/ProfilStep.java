@@ -18,6 +18,30 @@ public class ProfilStep {
         this.driver= Hooks.driver;
     }
 
+    @And("The user verify balance in profile is hide")
+    public void balanceHide(){
+        ProfilPage profilPage = new ProfilPage(driver);
+        Assert.assertTrue(profilPage.getBalanceValue().contains("**********"));
+    }
+
+    @And("The user verify balance in profile is show")
+    public void balanceShow(){
+        ProfilPage profilPage = new ProfilPage(driver);
+        Assert.assertFalse(profilPage.getBalanceValue().contains("**********"));
+    }
+
+    @And("On Profil page, The user click hide balance icon")
+    public void clickHideInProfile(){
+        ProfilPage profilPage = new ProfilPage(driver);
+        profilPage.clickHideInProfile();
+    }
+
+    @And("On Profil page, The user click show balance icon")
+    public void clickShowHideInProfile(){
+        ProfilPage profilPage = new ProfilPage(driver);
+        profilPage.clickShowHideInProfile();
+    }
+
     @And("The user will redirect to Profil page")
     public void redirectToProfilPage(){
         ProfilPage profilPage = new ProfilPage(driver);

@@ -39,7 +39,7 @@ public class BerandaPage {
     @FindBy(id = "username")
     private WebElement searchButton;
 
-    @FindBy(xpath = "//button[3]")
+    @FindBy(xpath = "//button[@class='flex items-center justify-center bg-[#F1F5F9] w-[36px] h-[36px] rounded-full']")
     private WebElement logoutButton;
 
     @FindBy(css = ".w-6")

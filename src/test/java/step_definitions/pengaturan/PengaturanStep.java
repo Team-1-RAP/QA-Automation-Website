@@ -18,6 +18,30 @@ public class PengaturanStep {
         this.driver= Hooks.driver;
     }
 
+    @And("On Pengaturan page, The user click Ubah Pin option")
+    public void clickUbahPin(){
+        PengaturanPage pengaturanPage = new PengaturanPage(driver);
+        pengaturanPage.clickUbahPin();
+    }
+
+    @And("On Pengaturan page, The user click Ubah Password option")
+    public void clickUbahPassword(){
+        PengaturanPage pengaturanPage = new PengaturanPage(driver);
+        pengaturanPage.clickUbahPassword();
+    }
+
+    @And("The user redirected to Ubah Pin page")
+    public void redirectToUbahPinPage(){
+        PengaturanPage pengaturanPage = new PengaturanPage(driver);
+        Assert.assertTrue(pengaturanPage.redirectToUbahPinPage());
+    }
+
+    @And("The user redirected to Ubah Password page")
+    public void redirectToUbahPasswordPage(){
+        PengaturanPage pengaturanPage = new PengaturanPage(driver);
+        Assert.assertTrue(pengaturanPage.redirectToUbahPasswordPage());
+    }
+
     @And("The user will redirect to Pengaturan page")
     public void redirectToPengaturanPage(){
         PengaturanPage pengaturanPage = new PengaturanPage(driver);
